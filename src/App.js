@@ -1,10 +1,10 @@
-import Home from './pages/Home';
+import Pages from './pages/Pages';
 
 const App = () => {
 	return (
 		<div className="App">
 			<h1>Hello World!</h1>
-			<Home />
+			<Pages />
 		</div>
 	);
 };
