@@ -34,13 +34,8 @@ const Popular = () => {
 					{popular.map((recipe) => (
 						<SplideSlide key={recipe.id}>
 							<Card>
-								<div key={recipe.id}>
-									<h3>{recipe.title}</h3>
-									<img
-										src={recipe.image}
-										alt={recipe.title}
-									/>
-								</div>
+								<p>{recipe.title}</p>
+								<img src={recipe.image} alt={recipe.title} />
 							</Card>
 						</SplideSlide>
 					))}
@@ -58,9 +53,32 @@ const Card = styled.div`
 	min-height: 25rem;
 	border-radius: 2rem;
 	overflow: hidden;
+	position: relative;
 
 	img {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 		border-radius: 2rem;
+	}
+
+	p {
+		position: absolute;
+		z-index: 10;
+		display: flex;
+		left: 50%;
+		bottom: 0;
+		transform: translate(-50%, 0%);
+		color: white;
+		width: 100%;
+		height: 40%;
+		text-align: center;
+		font-weight: 600;
+		font-size: 1rem;
+		justify-content: center;
+		align-items: center;
 	}
 `;
 
