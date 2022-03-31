@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/splide.min.css';
 
 const Popular = () => {
 	const [popular, setPopular] = useState([]);
@@ -20,14 +22,21 @@ const Popular = () => {
 		<div>
 			<Wrapper>
 				<h2>Popular Picks</h2>
-				{popular.map((recipe) => (
-					<Card>
-						<div key={recipe.id}>
-							<h3>{recipe.title}</h3>
-							<img src={recipe.image} alt={recipe.title} />
-						</div>
-					</Card>
-				))}
+				<Splide>
+					{popular.map((recipe) => (
+						<SplideSlide key={recipe.id}>
+							<Card>
+								<div key={recipe.id}>
+									<h3>{recipe.title}</h3>
+									<img
+										src={recipe.image}
+										alt={recipe.title}
+									/>
+								</div>
+							</Card>
+						</SplideSlide>
+					))}
+				</Splide>
 			</Wrapper>
 		</div>
 	);
@@ -38,7 +47,7 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-	min-height: 20rem;
+	min-height: 25rem;
 	border-radius: 2rem;
 	overflow: hidden;
 
