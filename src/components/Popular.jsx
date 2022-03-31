@@ -22,7 +22,15 @@ const Popular = () => {
 		<div>
 			<Wrapper>
 				<h2>Popular Picks</h2>
-				<Splide>
+				<Splide
+					options={{
+						perPage: 4,
+						arrows: false,
+						pagination: false,
+						drag: 'free',
+						gap: '5rem'
+					}}
+				>
 					{popular.map((recipe) => (
 						<SplideSlide key={recipe.id}>
 							<Card>
