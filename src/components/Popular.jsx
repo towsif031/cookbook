@@ -16,7 +16,7 @@ const Popular = () => {
 			setPopular(JSON.parse(check));
 		} else {
 			const api = await fetch(
-				`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10&tags=vegetarian`
+				`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`
 			);
 			const data = await api.json();
 
