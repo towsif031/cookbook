@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 const Cuisine = () => {
 	const [cuisine, setCuisine] = useState([]);
+	let params = useParams();
 
 	const getCuisine = async (name) => {
 		const data = await fetch(
@@ -15,8 +16,8 @@ const Cuisine = () => {
 	};
 
 	useEffect(() => {
-		getCuisine('italian');
-	}, []);
+		getCuisine(params.type);
+	}, [params.type]);
 
 	return (
 		<div>
