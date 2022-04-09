@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -23,8 +23,10 @@ const Cuisine = () => {
 		<Grid>
 			{cuisine.map((recipe) => (
 				<Card key={recipe.id}>
-					<img src={recipe.image} alt="" />
-					<h4>{recipe.title}</h4>
+					<Link to={`/recipe/${recipe.id}`}>
+						<img src={recipe.image} alt="" />
+						<h4>{recipe.title}</h4>
+					</Link>
 				</Card>
 			))}
 		</Grid>
