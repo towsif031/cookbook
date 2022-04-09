@@ -1,12 +1,19 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 
 const Search = () => {
+	const [input, setInput] = useState('');
+
 	return (
 		<FromStyled>
 			<div>
 				<FaSearch></FaSearch>
-				<input type="text" />
+				<input
+					onChange={(e) => setInput(e.target.value)}
+					type="text"
+					value={input}
+				/>
 			</div>
 		</FromStyled>
 	);
